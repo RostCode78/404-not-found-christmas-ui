@@ -19,7 +19,7 @@
     position: absolute;
     bottom: -325px;
     z-index: 200;
-    animation: snowfall infinite 200s;
+    animation: snowfall infinite 35s;
 }
 
 @-webkit-keyframes snowfall {
