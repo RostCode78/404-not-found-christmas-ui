@@ -1,10 +1,52 @@
-body {
+* {
     padding: 0;
     margin: 0;
-    background: #4393c4ff;
 }
 
-.nieve {
+#container {
+    width: 100%;
+    height: 100vh;
+    background: #4393c4ff;
+    position: relative;
+    overflow: hidden;
+}
+
+.snowcape-container {
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/capa-de-nieve.svg');
+    background-size: cover;
+    position: absolute;
+    bottom: -325px;
+    z-index: 200;
+    /* animation: snowfall infinite 200s; */
+}
+
+@-webkit-keyframes snowfall {
+    0% {
+        bottom: -325px;
+    }
+    50% {
+        bottom: 0px;
+    }
+    100% {
+        bottom: -325px;
+    }
+}
+
+@keyframes snowfall {
+    0% {
+        bottom: -325px;
+    }
+    50% {
+        bottom: 0px;
+    }
+    100% {
+        bottom: -325px;
+    }
+}
+
+.snowflake {
     width: 7px;
     height: 7px;
     border-radius: 50px;
@@ -57,10 +99,10 @@ body {
     }
 }
 
-.nieve {
+.snowflake {
     position: fixed;
     top: -10%;
-    z-index: 9999;
+    z-index: 100;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -77,19 +119,19 @@ body {
     animation-play-state: running, running;
 }
 
-.nieve:nth-of-type(0) {
+.snowflake:nth-of-type(0) {
     left: 1%;
     -webkit-animation-delay: 0s, 0s;
     animation-delay: 0s, 0s;
 }
 
-.nieve:nth-of-type(1) {
+.snowflake:nth-of-type(1) {
     left: 10%;
     -webkit-animation-delay: 1s, 1s;
     animation-delay: 1s, 1s;
 }
 
-.nieve:nth-of-type(2) {
+.snowflake:nth-of-type(2) {
     left: 20%;
     -webkit-animation-delay: 6s, .5s;
     animation-delay: 6s, .5s;
@@ -101,38 +143,99 @@ body {
     animation-delay: 4s, 2s;
 }
 
-.nieve:nth-of-type(4) {
+.snowflake:nth-of-type(4) {
     left: 40%;
     -webkit-animation-delay: 2s, 2s;
     animation-delay: 2s, 2s;
 }
 
-.nieve:nth-of-type(5) {
+.snowflake:nth-of-type(5) {
     left: 50%;
     -webkit-animation-delay: 8s, 3s;
     animation-delay: 8s, 3s;
 }
 
-.nieve:nth-of-type(6) {
+.snowflake:nth-of-type(6) {
     left: 60%;
     -webkit-animation-delay: 6s, 2s;
     animation-delay: 6s, 2s;
 }
 
-.nieve:nth-of-type(7) {
+.snowflake:nth-of-type(7) {
     left: 70%;
     -webkit-animation-delay: 2.5s, 1s;
     animation-delay: 2.5s, 1s;
 }
 
-.nieve:nth-of-type(8) {
+.snowflake:nth-of-type(8) {
     left: 80%;
     -webkit-animation-delay: 1s, 0s;
     animation-delay: 1s, 0s;
 }
 
-.nieve:nth-of-type(9) {
+.snowflake:nth-of-type(9) {
     left: 90%;
     -webkit-animation-delay: 3s, 1.5s;
     animation-delay: 3s, 1.5s;
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.santa {
+    width: 80%;
+    height: 25%;
+    background-image: url(../img/santa.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-top: -250px;
+}
+
+.box p {
+    font-size: 3em;
+    font-family: 'Pacifico', cursive;
+}
+
+.btn-home {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    z-index: 300;
+}
+
+.btn-home a {
+    width: 150px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4393c4;
+    border: 3px solid #d8f6fe;
+    box-shadow: 4px 4px 8px #00000052, -4px -4px 8px #ffffff52;
+    border-radius: 50px;
+    font-size: 1.2em;
+    font-family: 'Pacifico', cursive;
+    text-decoration: none;
+    color: #d8f6fe;
+}
+
+@media (max-width: 1181px) {
+    .btn-home a {
+        background-color: #d8f6fe;
+        border: 3px solid #d8f6fe;
+        color: #4393c4;
+    }
 }
